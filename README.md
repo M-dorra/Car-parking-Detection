@@ -1,13 +1,13 @@
 # 🅿️ Car Parking Detection System
 
-This project is a full-stack web application that detects and counts **occupied and free parking spaces** from a video feed. It uses a **custom-trained CNN model** to classify each predefined parking region as `"car"` or `"no car"`. The interface is built using **Flask**, and the video processing is done with **OpenCV** and **TensorFlow/Keras**.
+This project is a full-stack web application that detects and counts **occupied and free parking spaces** from a video feed or an image. It uses a **custom-trained CNN model** to classify each predefined parking region as `"car"` or `"no car"`. The interface is built using **Flask**, and the video processing is done with **OpenCV** and **TensorFlow/Keras**.
 
 ## 🔍 Features
 
 - Real-time parking detection from a video stream
 - Uses a custom-trained Keras model (`model.h5`) to classify car presence in a region
 - Manual parking slot coordinate setup stored in `car_pos.pkl`
-- Supports both **images** and **video**
+- Supports both **images** and **videos**
 - Annotated output with:
   - Green boxes for **empty** spots
   - Red boxes for **occupied** spots
@@ -17,7 +17,7 @@ This project is a full-stack web application that detects and counts **occupied 
 
 ## 🛠️ Installation
 
-### 1.Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/M-dorra/car-parking-detection.git
@@ -37,34 +37,19 @@ python main.py
 ### 4. Open the frontend : **http://localhost:5000**
 
 
-
-## ⚙ How It Works
-
-- Predefine Parking Positions :
-  -Manually select and save parking spot coordinates using OpenCV click tool (stored in car_pos.pkl)
-- Frame Processing
-  - For each frame/image, the script:
-    - Crops each spot region
-    - Resizes and normalizes it
-    - Passes it to the loaded model for classification
-- Model Inference :
-  - The custom CNN classifies each cropped image as car or no_car.
-- Visualization:
-  - Colors the parking boxes (red = occupied, green = empty) and overlays count on frame.
-
-⚙️ How It Works
+## ⚙️ How It Works
 1. Manual Spot Definition
-- Parking spots are manually defined and saved using OpenCV mouse clicks
-- Saved to car_pos.pkl using the tool define_parking_spots.py
+  - Parking spots are manually defined and saved using OpenCV mouse clicks
+  - Saved to car_pos.pkl using the tool define_parking_spots.py
 2. Frame Processing
-- For each frame in the video:
-- Crop each defined region (ROI)
-- Resize to match model input (e.g., 48x48)
-- Normalize pixel values
-- Pass to CNN model for prediction
+  - For each frame in the video:
+  - Crop each defined region (ROI)
+  - Resize to match model input (e.g., 48x48)
+  - Normalize pixel values
+  - Pass to CNN model for prediction
 3. Classification
-- CNN returns label "car" or "no_car" for each ROI
+  - CNN returns label "car" or "no_car" for each ROI
 4. Visualization
-- Draws colored boxes (green/red)
-- Counts empty and occupied spots
-- Sends results to web interface and API
+  - Draws colored boxes (green/red)
+  - Counts empty and occupied spots
+  - Sends results to web interface and API
