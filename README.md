@@ -53,3 +53,8 @@ python main.py
   - Draws colored boxes (green/red)
   - Counts empty and occupied spots
   - Sends results to web interface and API
+
+
+![Screenshot 2025-07-04 160944](https://github.com/user-attachments/assets/7bb389ce-1d33-4fa3-b2b0-7f3418810105)
+
+![Screenshot 2025-07-04 150448](https://github.com/user-attachments/assets/46aebe97-f209-4160-a238-37aa9a5d0a95)
